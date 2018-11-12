@@ -57,7 +57,7 @@
     "proxyquire": "^2.1.0",
     "semantic-release": "^15.9.17",
     "standard": "^12.0.0",
-    "tap": "^12.0.0",
+    "tap": "12.0.1",
     "tar-stream": "^1.6.2"
   },
   "nyc": {
