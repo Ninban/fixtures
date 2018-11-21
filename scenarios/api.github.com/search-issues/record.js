@@ -45,7 +45,7 @@ async function searchIssues (state) {
       },
       data: {
         title: 'Sesame seeds split without a pop!',
-        body: 'I’ve waited all year long, but there was no pop 😭'
+        body: 'I’ve waited all year long, but there was no pop'
       }
     })
 
