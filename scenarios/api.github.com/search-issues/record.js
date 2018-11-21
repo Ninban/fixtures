@@ -19,6 +19,7 @@ async function searchIssues (state) {
   try {
     // https://developer.github.com/v3/issues/#create-an-issue
     // (theses requests get ignored, we need an existing issues for the serarch)
+    console.log('creating issue 1')
     await state.request({
       method: 'post',
       url: `/repos/octokit-fixture-org/${temporaryRepository.name}/issues`,
@@ -33,6 +34,7 @@ async function searchIssues (state) {
       }
     })
 
+    console.log('creating issue 2')
     await state.request({
       method: 'post',
       url: `/repos/octokit-fixture-org/${temporaryRepository.name}/issues`,
@@ -48,8 +50,10 @@ async function searchIssues (state) {
     })
 
     // timeout for search indexing
-    await new Promise(resolve => setTimeout(resolve, 10000))
+    console.log('delay for indexing')
+    await new Promise(resolve => setTimeout(resolve, 5000))
 
+    console.log('search request')
     const query = `sesame repo:octokit-fixture-org/${temporaryRepository.name}`
     await state.request({
       method: 'get',
@@ -60,6 +64,8 @@ async function searchIssues (state) {
       }
     })
   } catch (_error) {
+    console.log('ERROR')
+    console.log(_error)
     error = _error
   }
 
