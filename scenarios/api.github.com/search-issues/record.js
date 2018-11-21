@@ -34,6 +34,9 @@ async function searchIssues (state) {
       }
     })
 
+    console.log('delay for debug')
+    await new Promise(resolve => setTimeout(resolve, 5000))
+
     console.log('creating issue 2')
     await state.request({
       method: 'post',
