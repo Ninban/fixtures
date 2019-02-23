@@ -17,7 +17,7 @@ async function gitRefs (state) {
 
   try {
     // https://developer.github.com/v3/repos/contents/#create-a-file
-    // (these requests get ignored, we need two commits to test our refrences)
+    // (these requests get ignored, we need two commits to test our references)
     const { data: { commit: { sha: sha1 } } } = await state.request({
       method: 'put',
       url: `/repos/octokit-fixture-org/${temporaryRepository.name}/contents/1.md`,
